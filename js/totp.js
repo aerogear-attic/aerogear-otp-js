@@ -28,5 +28,9 @@ var Totp = function (secret) {
         //TODO implement left pading
     }
 
-    return hash(secret, currentInterval());
+    return {
+        now: function() {
+            return hash(secret, currentInterval());
+        }
+    };
 };
