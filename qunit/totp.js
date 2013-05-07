@@ -20,14 +20,7 @@ Unit tests that cover basic functionality of app.js.
 
 module('TOTP');
 
-test('Create new TOTP object', function() {
-    var totp = new Totp("B2374TNIQ3HKC446");
-    ok(totp instanceof Totp, "Should return a new instance of Totp");
-});
-
 test('Retrieve a new TOTP', function() {
-    var totp = new Totp("B2374TNIQ3HKC446");
-    var result = totp.now();
+    var result = Totp("B2374TNIQ3HKC446");
     console.log("My sweet otp: " + result);
 });
-
