@@ -1,13 +1,14 @@
-# AeroGear OTP.js
+# aerogear-otp-js - JavaScript One Time Password API
 
-## This is a working in progress
+A JavaScript library for generating one time passwords according to [RFC 4226.](http://tools.ietf.org/html/rfc4226). 
 
 ## Getting started
 
 ### Use
 
-	String secret = "42";
+	String secret = "B2374TNIQ3HKC446"; //Base32
 	var totp = new Totp(secret);
 	totp.now(); //427773
 
-Note: not inevitable for your eyes to hurt 
+
+For more details, please refer to our [documentation](http://aerogear.org/docs/specs/aerogear-security-otp/)
