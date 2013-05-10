@@ -21,8 +21,20 @@ Unit tests that cover basic functionality of app.js.
 module('TOTP');
 
 test('Retrieve a new TOTP', function() {
-    var totp = Totp("B2374TNIQ3HKC446");
+    expect(2);
+    var totp = Totp("B2374TNIQ3HKC446"),
+        originalDate = Date;
+
+    // Temporarily override Date to return a known integer to work with currentInterval
+    Date = function() {
+        return 1111111111111;
+    };
+
     var result = totp.now();
-    console.log("My sweet otp: " + result);
+    equal( result, "920997", "Expected TOTP generated" );
+
+    // Reset Date
+    Date = originalDate;
+    notEqual( new Date() - 0, 1111111111111, "Date has been returned to original functionality" );
 });
 
