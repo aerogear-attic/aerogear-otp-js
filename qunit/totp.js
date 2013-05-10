@@ -21,6 +21,7 @@ Unit tests that cover basic functionality of app.js.
 module('TOTP');
 
 test('Retrieve a new TOTP', function() {
+    expect(2);
     var totp = Totp("B2374TNIQ3HKC446"),
         originalDate = Date;
 
@@ -34,5 +35,6 @@ test('Retrieve a new TOTP', function() {
 
     // Reset Date
     Date = originalDate;
+    notEqual( new Date() - 0, 1111111111111, "Date has been returned to original functionality" );
 });
 
