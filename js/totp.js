@@ -25,7 +25,16 @@ var Totp = function (secret) {
     }
 
     function leftPadding(otp) {
-        return Array((6 - otp.length)).join("0") + otp;
+        var length = 6 - otp.length;
+        if ( length ) {
+            if ( length > 1 ) {
+                otp = Array( length ).join("0") + otp;
+            } else {
+                otp = "0" + otp;
+            }
+        }
+
+        return otp;
     }
 
     return {
