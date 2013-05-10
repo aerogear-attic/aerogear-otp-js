@@ -6,7 +6,7 @@ var Totp = function (secret) {
 
       var otp = bytesToInt(hashed);
 
-      return otp.toString();
+      return leftPadding(otp.toString());
     }
 
     function currentInterval() {
@@ -25,7 +25,16 @@ var Totp = function (secret) {
     }
 
     function leftPadding(otp) {
-        //TODO implement left pading
+        var length = 6 - otp.length;
+        if ( length ) {
+            if ( length > 1 ) {
+                otp = Array( length ).join("0") + otp;
+            } else {
+                otp = "0" + otp;
+            }
+        }
+
+        return otp;
     }
 
     return {

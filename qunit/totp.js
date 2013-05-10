@@ -38,3 +38,20 @@ test('Retrieve a new TOTP', function() {
     notEqual( new Date() - 0, 1111111111111, "Date has been returned to original functionality" );
 });
 
+test('Left pad with zeros TOTP', function() {
+    expect(2);
+    var totp = Totp("LM7K34HKUPHTTMXW"),
+        originalDate = Date;
+
+    // Temporarily override Date to return a known integer to work with currentInterval
+    Date = function() {
+        return 1111111111111;
+    };
+
+    var result = totp.now();
+    equal( result, "072374", "Expected Zero padded TOTP" );
+    
+    Date = originalDate;
+    notEqual( new Date() - 0, 1111111111111, "Date has been returned to original functionality" );
+    
+});
