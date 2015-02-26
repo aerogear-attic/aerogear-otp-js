@@ -5,7 +5,7 @@ A JavaScript library for generating one time passwords according to [RFC 4226.](
 |                 | Project Info  |
 | --------------- | ------------- |
 | License:        | Apache License, Version 2.0  |
-| Build:          | Maven  |
+| Project Type:   | JavaScript  |
 | Documentation:  | https://aerogear.org/docs/  |
 | Issue tracker:  | https://issues.jboss.org/browse/AGSEC  |
 | Mailing lists:  | [aerogear-users](http://aerogear-users.1116366.n5.nabble.com/) ([subscribe](https://lists.jboss.org/mailman/listinfo/aerogear-users))  |
