@@ -1,3 +1,6 @@
+## Deprecation Notice
+This repository has been deprecated and is not being maintained. If you have any questions, please get in touch with the collaborators.
+
 # aerogear-otp-js - JavaScript One Time Password API
 
 A JavaScript library for generating one time passwords according to [RFC 4226.](http://tools.ietf.org/html/rfc4226). 
